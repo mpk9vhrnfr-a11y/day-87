@@ -1,15 +1,22 @@
-//
-//  main.c
-//  day 87
-//
-//  Created by Sanaa Kumar on 26/11/25.
-//
-
-#include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return EXIT_SUCCESS;
+enum Role {ADMIN, USER, GUEST};
+
+int main(void) {
+    enum Role r;
+
+    printf("Enter role (0-ADMIN, 1-USER, 2-GUEST): ");
+    scanf("%d", (int*)&r);
+
+    if(r == ADMIN)
+        printf("Welcome, Admin! You have full access.\n");
+    else if(r == USER)
+        printf("Welcome, User! You have limited access.\n");
+    else if(r == GUEST)
+        printf("Welcome, Guest! You have guest access.\n");
+    else
+        printf("Invalid role.\n");
+
+    return 0;
 }
+
